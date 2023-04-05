@@ -1,3 +1,11 @@
+const viewHeight = 90;
+const viewWidth = 90;
+const colorBlue = "#d5d6ea";
+const colorwhite = "#f6f6eb";
+const colorBeige = "#f5d5cb";
+const colorGreen = "#d7ecd9";
+const colorLilac = "#f6ecf5";
+const colorYellow = "#fcf5c7";
 
 const resizeButton = document.querySelector(".sizeBtn");
 resizeButton.addEventListener("click", inputGridSize);
@@ -14,7 +22,7 @@ function generate_Grid(gridSize)
         const horizontalContainer = document.createElement("div"); 
         horizontalContainer.classList.add("horizontalContainer");
         //setting height in JS to dynamically adjust with resizing grid
-        horizontalContainer.style.height = 90/gridSize +"vh";
+        horizontalContainer.style.height = (viewHeight)/gridSize +"vh";
         containerDiv.appendChild(horizontalContainer);
 
 
@@ -22,8 +30,8 @@ function generate_Grid(gridSize)
             const gridElements = document.createElement("div");
             gridElements.classList.add("gridElements");
             //setting the dimensions in JS to dynamically adjust with resizing grid
-            gridElements.style.width = 100/gridSize + "vh";
-            gridElements.style.height = 100/gridSize + "vh";
+            gridElements.style.width = viewHeight/gridSize + "vh";
+            gridElements.style.height = viewHeight/gridSize + "vh";
             horizontalContainer.appendChild(gridElements);
         }
     }

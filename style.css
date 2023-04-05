@@ -1,15 +1,30 @@
 
 body{
-    background-color: beige;
+    background-color: #f6f6eb;
     display:flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100%;
     margin: 0;
     justify-content: center;
     align-items: center;
    
 }
+
+.btnContainer{
+    height: auto;
+    width: 90vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.colorSelect{
+    height: auto;
+    display: flex;
+    justify-content: flex-start;   
+}
 .sizeBtn{
+    
     display: flex;
     align-self: center;
     font-size: 10px;
@@ -17,10 +32,15 @@ body{
     width:5em;
     text-align: center;
 }
+.paintColor{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 .containerDiv{
    
     width: 90vw;
-    height: 60%;
+    height: auto;
     display: flex;
     flex:1;
     flex-direction: column;
@@ -33,7 +53,7 @@ body{
     flex:1;
     flex-direction: row;
     justify-self: center;
-    width:100%;
+    
     /*height set in JS to dynamically adjust to resizing grid */
     }
 
