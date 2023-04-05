@@ -1,0 +1,52 @@
+
+body{
+    background-color: beige;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+   
+}
+.sizeBtn{
+    display: flex;
+    align-self: center;
+    font-size: 10px;
+    height: auto;
+    width:5em;
+    text-align: center;
+}
+.containerDiv{
+    position:fixed;
+    top:10vh;
+    bottom: auto;
+    left: auto;
+    right:auto;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.horizontalContainer{
+    display: flex;
+    flex:1;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+    max-width:100%;
+}
+.gridElements{
+    display: flex;
+    flex:1;
+    align-items: center;
+    justify-self: center;
+    height: 5.3vh;
+    width:6.25vw;
+    border:1px solid black;
+}
+
+.hover{
+    background-color: grey;
+}
