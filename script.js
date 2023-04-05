@@ -6,19 +6,24 @@ resizeButton.addEventListener("click", inputGridSize);
 function generate_Grid(gridSize)
 {
 
-      //generate grid size column div  
+      //instantiate grid by horizontal rows and populating each row with individual cells
       const containerDiv = document.querySelector(".containerDiv");
     for (let i = 0; i < gridSize; i++)
     {
        
         const horizontalContainer = document.createElement("div"); 
         horizontalContainer.classList.add("horizontalContainer");
+        //setting height in JS to dynamically adjust with resizing grid
+        horizontalContainer.style.height = 90/gridSize +"vh";
         containerDiv.appendChild(horizontalContainer);
 
-        //generate gridsize horizontal divs for each column div
+
         for (let j = 0; j < gridSize; j++) {
             const gridElements = document.createElement("div");
             gridElements.classList.add("gridElements");
+            //setting the dimensions in JS to dynamically adjust with resizing grid
+            gridElements.style.width = 100/gridSize + "vh";
+            gridElements.style.height = 100/gridSize + "vh";
             horizontalContainer.appendChild(gridElements);
         }
     }
@@ -32,7 +37,6 @@ function hoverEffect()
     //foreach element inside the tiles variable, add event listener that adds class hover
     tiles.forEach(element => {
         element.addEventListener("mouseover", ()=> {element.classList.add("hover")});
-        console.log(`there is currently an elemtn that should be selected rn`);
     });
      
     
@@ -42,15 +46,21 @@ function inputGridSize()
 {
     let gridSize = Number(prompt(`please enter the size of the grid`));
     
-    //remove the current grid arrangement
+    if (gridSize<1||gridSize>100)
+    {
+        alert(' !Sorry, grid must be greater than one, and up to 100!');
+        inputGridSize();
+    }
+    else
+    {
+        //remove the current grid arrangement
     const grid = document.querySelectorAll(".horizontalContainer");
     grid.forEach(element => element.remove())
     
-    
-
-    generate_Grid(gridSize);
-    hoverEffect();
-}
+     generate_Grid(gridSize);
+     hoverEffect();
+    }
+ }
 
 generate_Grid(16);
 hoverEffect();
