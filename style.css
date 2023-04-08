@@ -11,17 +11,32 @@ body{
 }
 
 .btnContainer{
+    margin-top: .2em;
+    margin-bottom: .2em;
     height: auto;
     width: 90vw;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     
 }
 .colorSelect{
+    font-size: small;
     height: auto;
     display: flex;
-    justify-content: flex-start;   
+    justify-content: space-between;
+}
+.colorBtn{
+    border-style:none;
+    background-color: aquamarine;
+    flex-grow: 1;
+    flex-basis: calc(33.33%-2px);
+    height: 20px;
+    margin:1px;
+}
+.colorBtn:hover{
+    transform:scale(1.2);
 }
 .sizeBtn{
     

@@ -1,15 +1,32 @@
 const viewHeight = 90;
 const viewWidth = 90;
-const colorBlue = "#d5d6ea";
-const colorwhite = "#f6f6eb";
-const colorBeige = "#f5d5cb";
-const colorGreen = "#d7ecd9";
-const colorLilac = "#f6ecf5";
-const colorYellow = "#fcf5c7";
 
 const resizeButton = document.querySelector(".sizeBtn");
-resizeButton.addEventListener("click", inputGridSize);
+const backgroundColorButton = document.querySelectorAll(".colorBtn.background");
+const paintColorButton = document.querySelectorAll(".colorBtn.paint");
 
+resizeButton.addEventListener("click", inputGridSize);
+backgroundColorButton.forEach((button)=>{button.addEventListener('click',(event)=>{
+        backgroundSelector(event.target.dataset.colorid);
+    });
+});
+paintColorButton.forEach((button)=>{button.addEventListener('click',(event)=>{
+    paintSelector(event.target.dataset.colorid);
+    });
+});
+
+function backgroundSelector(colorid){
+    //this function will accept the color as a parameter that will change the background color to the one desired
+    document.body.style.backgroundColor = `${colorid}`;
+    console.log(colorid);
+}
+function paintSelector(colorid){
+    //this function will accept the color as a parameter that will chang the paint color
+    const tiles = document.querySelectorAll(".gridElements");
+    tiles.forEach((tile)=>{tile.addEventListener("mouseover", ()=> {tile.style.backgroundColor = `${colorid}`;}
+        );
+    });
+}
 
 function generate_Grid(gridSize)
 {
